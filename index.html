@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Elige el monto de tu préstamo</h1>
+  <h2 class='requestedAmt'>B/. 0.00</h2>
+  <form>
+    <input type="range" name="calculator[requestedAmt]" id="calculatorRequestedAmt" value=0 step=5 min=50 max=500
+      list="capital-tags">
+    <datalist id="capital-tags">
+      <option label="B/. 50.00" value="50"></option>
+      <option label="B/. 500.00" value="500"></option>
+    </datalist>
+    <h3>Elige el número de cuotas</h3>
+    <div id="payments__container">
+      <label for="calculatorTwoPayments">
+        <input type="radio" name="calculator[payments]" id="calculatorTwoPayments" value=2>
+        2 Cuotas
+      </label>
+      <label for="calculatorFourPayments" class='active'>
+        <input type="radio" name="calculator[payments]" id="calculatorFourPayments" value=4 checked>
+        4 Cuotas
+      </label>
+      <label for="calculatorSixPayments">
+        <input type="radio" name="calculator[payments]" id="calculatorSixPayments" value=6>
+        6 Cuotas
+      </label>
+    </div>
+  </form>
+  <table>
+    <tbody>
+      <tr>
+        <th>Préstamo</th>
+        <td><span class='requestedAmt'>0.00</span></td>
+      </tr>
+      <tr>
+        <th>Interés</th>
+        <td class='interests'>B/. 0.00</td>
+      </tr>
+      <tr>
+        <th>Comisión</th>
+        <td class='commission'>B./ 0.00</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Total</th>
+        <td class='totalLoanAmt'>B/. 0.00</td>
+      </tr>
+    </tfoot>
+  </table>
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Fecha</th>
+        <th>Monto</th>
+      </tr>
+    </thead>
+    <tbody class='dates'></tbody>
+  </table>
+
+  <script src="calculations.js"></script>
+  <script src="calculator.js"></script>
+</body>
+
+</html>
